@@ -1,6 +1,7 @@
 package sk.itsovy.regex;
 
 import sk.itsovy.data.DataIP;
+import sk.itsovy.data.PersonalID;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +12,10 @@ public class Main {
 
     public static void main(String[] args) {
 		DataIP dataIP = new DataIP();
+		PersonalID personalID = new PersonalID();
 		ipAddressRegex(dataIP.get());
+		System.out.println();
+		personalIDRegex(personalID.get());
     }
 
     public static void ipAddressRegex(List<String> list) {
@@ -34,7 +38,7 @@ public class Main {
 			if (s != null) {
 				Matcher matcher = pattern.matcher(s);
 				if (matcher.find()) {
-					System.out.println("VALID IP: " + matcher.group());
+					System.out.println("VALID ID: " + matcher.group());
 				}
 			}
 		}
